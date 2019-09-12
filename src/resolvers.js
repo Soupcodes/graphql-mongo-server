@@ -2,13 +2,14 @@ import { Cat } from "./models/Cat";
 
 export const resolvers = {
   Query: {
-    hello: () => "hello"
+    hello: () => "hello",
+    cats: () => Cat.find()
   },
   Mutation: {
-    createCat: async (_, { name }) => {
+    //name is destructured from 'args'
+    createCat: async (_parent, { name }) => {
       const kitty = new Cat({ name });
       await kitty.save();
-      console.log(kitty);
       return kitty;
     }
   }

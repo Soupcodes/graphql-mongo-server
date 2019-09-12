@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import { typeDefs } from "./typeDefs";
 import { resolvers } from "./resolvers";
 
+
 const startServer = async () => {
   const app = express();
 
@@ -14,6 +15,7 @@ const startServer = async () => {
 
   server.applyMiddleware({ app });
 
+  //suffix 'work' defines the name of the schema that is created in MongoDB
   await mongoose.connect("mongodb://localhost:27017/work", {
     useUnifiedTopology: true,
     useNewUrlParser: true
