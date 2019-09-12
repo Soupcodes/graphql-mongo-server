@@ -1,3 +1,5 @@
+import { Cat } from "./models/Cat";
+
 export const resolvers = {
   Query: {
     hello: () => "hello"
